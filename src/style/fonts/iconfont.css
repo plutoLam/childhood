@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2913206 */
+  src: url('iconfont.woff2?t=1637161464891') format('woff2'),
+       url('iconfont.woff?t=1637161464891') format('woff'),
+       url('iconfont.ttf?t=1637161464891') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-back_android_light:before {
+  content: "\e7ed";
+}
+
+.icon-guanbi:before {
+  content: "\eca0";
+}
+
+.icon-renwu-ren:before {
+  content: "\e749";
+}
+
+.icon-fenxiang1:before {
+  content: "\e606";
+}
+
+.icon-youjiantou:before {
+  content: "\e62a";
+}
+
+.icon-dianzan:before {
+  content: "\e605";
+}
+
+.icon-aite:before {
+  content: "\e7ab";
+}
+
+.icon-dianzan_kuai:before {
+  content: "\ec8c";
+}
+
+.icon-pinglun:before {
+  content: "\e615";
+}
+
+.icon-fenxiang:before {
+  content: "\e626";
+}
+
+.icon-jinghaojian:before {
+  content: "\e70e";
+}
+
+.icon-24gf-pause2:before {
+  content: "\ea81";
+}
+
+.icon-bofang:before {
+  content: "\e87c";
+}
+
+.icon-shangyishou:before {
+  content: "\e603";
+}
+
+.icon-xiayishou:before {
+  content: "\e602";
+}
+
