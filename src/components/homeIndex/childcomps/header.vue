@@ -37,6 +37,12 @@ export default {
         case 1:
           this.$router.push("/messageboard");
           break;
+        case 2:
+          this.$message("此功能还未开发，敬请期待");
+          break;
+        case 3:
+          this.$message("此功能还未开发，敬请期待");
+          break;
         default:
           break;
       }

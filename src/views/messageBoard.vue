@@ -88,26 +88,30 @@ export default {
       this.$router.push("/");
     },
     commitComment() {
-      postContent(this.content, this.token).then((res) => {
-        console.log(res);
-        if (res.code === 2000) {
-          this.$message({
-            message: "留言成功！",
-            type: "success",
-          });
-          if (this.offset === 1) {
-            this.getChangeOffset(1);
-          } else {
-            this.offset = 1;
-          }
+      if (!this.comment) {
+        this.$message("请输入留言内容");
+      } else {
+        postContent(this.content, this.token).then((res) => {
+          console.log(res);
+          if (res.code === 2000) {
+            this.$message({
+              message: "留言成功！",
+              type: "success",
+            });
+            if (this.offset === 1) {
+              this.getChangeOffset(1);
+            } else {
+              this.offset = 1;
+            }
 
-          this.content = "";
-        } else if (res.code === 2005) {
-          this.$message.error("请登录后操作");
-        } else {
-          this.$message.error("留言失败");
-        }
-      });
+            this.content = "";
+          } else if (res.code === 2005) {
+            this.$message.error("请登录后操作");
+          } else {
+            this.$message.error("留言失败");
+          }
+        });
+      }
     },
     getMessageBoardData(size) {
       getMessageBoard(this.offset, size, this.token).then((res) => {
@@ -157,10 +161,12 @@ export default {
   computed: {
     barrage() {
       return this.barrageList.map((item) => {
-        return {
-          id: getUUID(),
-          name: item.content,
-        };
+        if (item.content.length <= 50) {
+          return {
+            id: getUUID(),
+            name: item.content,
+          };
+        }
       });
     },
     ...mapState(["token"]),

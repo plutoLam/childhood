@@ -264,7 +264,7 @@ export default {
                 type: "success",
               });
               this.toLogin();
-            } else if (code === 2002) {
+            } else if (code === 2004) {
               this.$message.error({
                 message: "用户名已存在",
               });

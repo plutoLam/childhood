@@ -130,6 +130,7 @@ export default {
     animation: rightToleft 13s linear both; //7s
     color: rgba($color: #fff, $alpha: 0.5);
     font-size: 20px;
+    white-space: nowrap;
   }
   .barrage-item[data-line="1"] {
     top: 0;
