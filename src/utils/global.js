@@ -2,19 +2,10 @@ import {
   Icon,
   Input,
   Dialog,
-  Button,
   Loading,
-  Carousel,
-  CarouselItem,
-  Table,
-  TableColumn,
-  Tabs,
-  Popover,
   Pagination,
-  Checkbox,
   Message,
   Divider,
-  InfiniteScroll,
   Form,
   FormItem,
 
@@ -50,23 +41,15 @@ export default {
     Vue.prototype.$utils = utils
     Vue.prototype.$ELEMENT = { size: "small" }
 
-    Vue.use(Input)
-    Vue.use(Carousel)
-    Vue.use(CarouselItem)
-    Vue.use(Table)
-    Vue.use(TableColumn)
-    Vue.use(Tabs)
-    Vue.use(Popover)
-    Vue.use(Pagination)
-    Vue.use(Loading)
-    Vue.use(Dialog)
-    Vue.use(Button)
-    Vue.use(Checkbox)
-    Vue.use(Divider)
-    Vue.use(InfiniteScroll)
     Vue.use(Icon)
+    Vue.use(Input)
+    Vue.use(Dialog)
+    Vue.use(Loading)
+    Vue.use(Pagination)
+    Vue.use(Divider)
     Vue.use(Form)
     Vue.use(FormItem)
+
     Vue.prototype.$message = Message;
   }
 }

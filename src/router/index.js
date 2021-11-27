@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
+const Home = () => import('@/views/Home.vue')
 const MessageBoard = () => import('@/views/messageBoard.vue')
+const Tetris = () => import('@/views/Tetris.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,7 +15,12 @@ const routes = [
     path: '/messageboard',
     name: 'MessageBoard',
     component: MessageBoard
-  }
+  },
+  {
+    path: '/tetris',
+    name: 'Tetris',
+    component: Tetris
+  },
 ]
 
 const router = new VueRouter({

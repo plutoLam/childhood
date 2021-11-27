@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       input: "",
-      tabs: ["首页", "留言板", "童年", "更多"],
+      tabs: ["首页", "留言板", "游戏", "更多"],
     };
   },
   methods: {
@@ -38,7 +38,7 @@ export default {
           this.$router.push("/messageboard");
           break;
         case 2:
-          this.$message("此功能还未开发，敬请期待");
+          this.$router.push("/tetris");
           break;
         case 3:
           this.$message("此功能还未开发，敬请期待");

@@ -15,11 +15,11 @@ module.exports = {
   devServer: {
     host: '127.0.0.1',
     open: true,
-    port: 8081,
+    // port: 8081,
     proxy: {
       '/': {
         ws: false,
-        target: 'http://127.0.0.1:8080',
+        target: 'http://47.97.195.97:8080',
         changeOrigin: true,
         pathRewrite: {
           '^/': ''

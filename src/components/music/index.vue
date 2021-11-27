@@ -263,7 +263,7 @@ export default {
 </script>
 
 <style  scoped>
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Lato&display=swap"); */
 
 * {
   box-sizing: border-box;
