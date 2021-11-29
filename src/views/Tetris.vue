@@ -1,5 +1,7 @@
 <template>
   <div class="wrap">
+    <back @click="back"></back>
+
     <div class="tetris" id="tetris">
       <div class="rect" :class="drop ? 'drop' : ''">
         <!-- 边边上的装饰 -->
@@ -35,21 +37,6 @@
       </div>
       <Keyboard :filling="filling" />
     </div>
-
-    <!-- <div class="decorated">
-      <div class="index1">
-        <img class="line" src="@/assets/tetris/type1.png" alt="" />
-      </div>
-      <div class="index2">
-        <img class="block" src="@/assets/tetris/2.png" alt="" />
-      </div>
-      <div class="index3">
-        <img class="line" src="@/assets/tetris/type2.png" alt="" />
-      </div>
-      <div class="index4">
-        <img class="block" src="@/assets/tetris/3.png" alt="" />
-      </div>
-    </div> -->
 
     <BigMatrix :propMatrix="matrix" :cur="cur" :reset="reset" />
   </div>
@@ -133,6 +120,9 @@ export default {
     ]),
   },
   methods: {
+    back() {
+      this.$router.push("/");
+    },
     render() {
       let filling = 0;
       const size = (() => {
@@ -225,33 +215,6 @@ export default {
   direction: ltr;
   text-align: left;
   position: relative;
-}
-
-.decorated {
-  position: absolute;
-  left: 44%;
-  top: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: rotate(20deg);
-  img {
-    height: 100px;
-  }
-  .index1 {
-    // transform: rotate(20deg);
-  }
-  .index2 {
-    // transform: rotate(20deg);
-  }
-  .index3 {
-    // transform: rotate(20deg);
-  }
-  .index4 {
-    // transform: rotate(20deg);
-  }
-  @keyframes sw {
-  }
 }
 
 .tetris {

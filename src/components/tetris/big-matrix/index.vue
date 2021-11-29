@@ -248,7 +248,7 @@ export default {
   // position: absolute;
   // left: -22%;
   // top: -133%;
-  transform: scale(0.27) translate(-84%, -134%);
+  transform: scale(0.27) translate(-84%, -135%);
   // transform: scale(0.27);
   &.shake {
     animation-name: shake-center;

@@ -1,3 +1,18 @@
+const devServer = {
+  host: '127.0.0.1',
+  open: true,
+  // port: 8081,
+  proxy: {
+    '/': {
+      ws: false,
+      target: 'http://47.97.195.97:8080',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/': ''
+      }
+    }
+  }
+}
 module.exports = {
   css: {
     loaderOptions: {
@@ -12,20 +27,6 @@ module.exports = {
   configureWebpack: {
     devtool: 'source-map'
   },
-  devServer: {
-    host: '127.0.0.1',
-    open: true,
-    // port: 8081,
-    proxy: {
-      '/': {
-        ws: false,
-        target: 'http://47.97.195.97:8080',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/': ''
-        }
-      }
-    }
-  },
+  devServer: process.env.NODE_ENV === 'production' ? {} : devServer,
   publicPath: process.env.NODE_ENV === 'production' ? './' : '',
 }

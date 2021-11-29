@@ -5,6 +5,7 @@
     <Music ref="music" />
     <Candy ref="candy" />
     <Vedio ref="vedio" />
+
     <Sidebar @jump="jump" />
     <BackgroundImage />
   </div>
@@ -17,6 +18,7 @@ import Candy from "@/components/candy";
 import Vedio from "@/components/vedio";
 import BackgroundImage from "@/components/backgroundImage";
 import Sidebar from "@/components/sidebar";
+
 export default {
   name: "Home",
   components: {
@@ -55,44 +57,6 @@ export default {
         default:
           break;
       }
-    },
-    flowerAnimation() {
-      // console.log("flowerAnimation");
-      const { flower, home } = this.$refs;
-      let time = 1 + Math.ceil(Math.random() * 3 * 1000) / 1000; //生成1 ~ 4之间的一个随机数，即下一个花瓣生成的时间间隔
-
-      // 随机生成scal
-      let scale = Math.floor(Math.random() * 5);
-      scale = (10 - scale) / 10; //生成0.5 ~ 1之间的一个随机数，即为当前花瓣的缩放尺度
-
-      // 随机生成left
-      const clientWidth =
-        document.body.clientWidth || document.documentElement.clientWidth;
-      // console.log("clientWidth: ", clientWidth);
-      let left = Math.floor(Math.random() * clientWidth);
-
-      // console.log(time, scale, left);
-
-      this.flowerData.push({
-        transform: `scale(${scale})`,
-        left: `${left}px`,
-      });
-
-      // console.log("flow", flower);
-      if (flower) {
-        Array.from(flower).forEach((item, index) => {
-          DOMRect = item.getBoundingClientRect();
-          // console.log("DOMRect: ", DOMRect.y);
-          // console.log(document.documentElement.scrollHeight);
-          if (DOMRect.y >= document.documentElement.scrollHeight - 200) {
-            console.log("超过接", index);
-            this.flowerData.splice(index, 1);
-          }
-        });
-      }
-
-      console.log(this.flowerData);
-      setTimeout(this.flowerAnimation, time * 200); //在前面生成的时间过后，再次调用生成花瓣的方法
     },
     toIndex() {
       this.$refs.place.scrollIntoView({ behavior: "smooth" });

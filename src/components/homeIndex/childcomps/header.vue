@@ -16,16 +16,24 @@
         {{ item }}
       </div>
     </div>
+    <toggle :show.sync="isVedioShow">
+      <More :isShow="isVedioShow" @changeShow="isVedioShow = !isVedioShow" />
+    </toggle>
   </div>
 </template>
 
 <script>
+import More from "@/components/more";
 export default {
   name: "Header",
+  components: {
+    More,
+  },
   data() {
     return {
       input: "",
-      tabs: ["首页", "留言板", "游戏", "更多"],
+      tabs: ["首页", "留言板", "游戏", "一封信"],
+      isVedioShow: false,
     };
   },
   methods: {
@@ -41,7 +49,7 @@ export default {
           this.$router.push("/tetris");
           break;
         case 3:
-          this.$message("此功能还未开发，敬请期待");
+          this.isVedioShow = !this.isVedioShow;
           break;
         default:
           break;
@@ -61,12 +69,13 @@ export default {
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  // justify-content: space-around;
   // background: linear-gradient(45deg, rgba(#bdc3c7, 0.3), rgba(#000, 0.3));
   /deep/.el-input {
     width: 200px;
     border-radius: 999px;
     overflow: hidden;
+    margin-left: 10%;
 
     .el-input__inner {
       // border-bottom: solid #0067c0 2px;
@@ -80,6 +89,8 @@ export default {
   .tabs-wrap {
     display: flex;
     font-size: 20px;
+    position: absolute;
+    right: 15%;
     .tab-item {
       padding: 10px 20px;
       cursor: pointer;

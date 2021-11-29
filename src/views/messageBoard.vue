@@ -1,8 +1,6 @@
 <template>
   <div class="message-board">
-    <div class="back" @click="back">
-      <Icon type="back_android_light" color="white" :size="30" />
-    </div>
+    <back @click="back"></back>
     <Barrage :waitBullets="barrage" />
     <div class="comment">
       <!-- 评论输入区 -->
@@ -88,7 +86,7 @@ export default {
       this.$router.push("/");
     },
     commitComment() {
-      if (!this.comment) {
+      if (!this.content) {
         this.$message("请输入留言内容");
       } else {
         postContent(this.content, this.token).then((res) => {
@@ -200,18 +198,6 @@ export default {
   width: 100%;
   position: relative;
   height: 200vh;
-  // overflow: hidden;
-
-  .back {
-    position: fixed;
-    left: 30px;
-    top: 30px;
-    @include round(40px);
-    background-color: #035e8a;
-    @include flex-center;
-    cursor: pointer;
-    font-weight: 900;
-  }
 
   .comment {
     width: 60%;
